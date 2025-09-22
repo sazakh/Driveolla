@@ -1,0 +1,205 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f7f7;
+}
+
+.container {
+  display: flex;
+  max-width: 1100px;
+  margin: 40px auto;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: visible;
+  min-height: 800px; /* ✅ Tambahkan ini untuk memperpanjang tinggi */
+}
+
+
+.left-side {
+  width: 380px;
+  min-width: 360px;
+  max-width: 400px;
+  background: linear-gradient(to bottom, #222 60%, #ddd 40%);
+  color: white;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: visible;
+}
+
+.left-side * {
+  color: black;
+}
+
+.background-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #222 60%, #ddd 40%);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.image-box {
+  position: relative;
+  z-index: 2;
+  height: 20px;
+}
+
+.image-box img {
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  transform: translateX(-50%);
+  width: 450px;
+  max-width: none;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+  z-index: 3;
+  transition: all 0.4s ease-in-out;
+}
+
+.car-details {
+  padding: 450px 30px 40px;
+  background-color: transparent;
+  z-index: 3;
+}
+
+.car-details h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.car-details p {
+  font-size: 16px;
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+}
+
+.car-details p i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.car-price {
+  margin-top: 5px;
+  color: #333;
+  font-size: 16px;
+}
+
+.specs div {
+  margin-bottom: 10px;
+}
+
+.right-side {
+  flex: 1;
+  padding: 30px 100px;
+  box-sizing: border-box;
+  color: black;
+}
+
+.right-side h3 {
+  margin-top: 0;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="file"],
+input[type="date"], /* tambahkan ini */
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  appearance: none;        /* bantu hilangkan style native di beberapa browser */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: white; /* pastikan warnanya sama */
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}
+
+.total {
+  margin: 25px 0;
+}
+
+.total h2 {
+  color: #4c534f;
+  margin: 0;
+  font-size: 24px;
+}
+
+.pay-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #838686;
+  color: rgb(255, 253, 253);
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pay-btn:hover {
+  background-color: #585959;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 4;
+  font-size: 24px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 6px 12px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-side,
+  .right-side {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .image-box img {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .left-side {
+    padding-bottom: 0;
+  }
+}
